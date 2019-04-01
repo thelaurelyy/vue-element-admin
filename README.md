@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/vue-2.5.17-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/ElemeFE/element">
-    <img src="https://img.shields.io/badge/element--ui-2.4.6-brightgreen.svg" alt="element-ui">
+    <img src="https://img.shields.io/badge/element--ui-2.4.11-brightgreen.svg" alt="element-ui">
   </a>
   <a href="https://travis-ci.org/PanJiaChen/vue-element-admin" rel="nofollow">
     <img src="https://travis-ci.org/PanJiaChen/vue-element-admin.svg?branch=master" alt="Build Status">
@@ -33,6 +33,8 @@ English | [简体中文](./README.zh-CN.md)
 [vue-element-admin](http://panjiachen.github.io/vue-element-admin) is a front-end management background integration solution. It based on [vue](https://github.com/vuejs/vue) and use the UI Toolkit [element](https://github.com/ElemeFE/element).
 
 It is a magical vue admin based on the newest development stack of vue, built-in i18n solution, typical templates for enterprise applications, lots of awesome features. It helps you build a large complex Single-Page Applications. I believe whatever your needs are, this project will help you.
+
+**[v4.0](https://github.com/PanJiaChen/vue-element-admin/tree/v4.0) has in beta. It built on vue-cli@3, optimized a lot of code and added a lot of new features. Welcome to use and make suggestions.**
 
 - [Preview](http://panjiachen.github.io/vue-element-admin)
 

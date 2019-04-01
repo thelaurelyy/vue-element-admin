@@ -1,11 +1,11 @@
 <template>
   <div class="login-container">
-
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
-
       <div class="title-container">
-        <h3 class="title">{{ $t('login.title') }}</h3>
-        <lang-select class="set-language"/>
+        <h3 class="title">
+          {{ $t('login.title') }}
+        </h3>
+        <lang-select class="set-language" />
       </div>
 
       <el-form-item prop="username">
@@ -13,6 +13,7 @@
           <svg-icon icon-class="user" />
         </span>
         <el-input
+          ref="username"
           v-model="loginForm.username"
           :placeholder="$t('login.username')"
           name="username"
@@ -26,18 +27,22 @@
           <svg-icon icon-class="password" />
         </span>
         <el-input
-          :type="passwordType"
+          ref="password"
           v-model="loginForm.password"
+          :type="passwordType"
           :placeholder="$t('login.password')"
           name="password"
           auto-complete="on"
-          @keyup.enter.native="handleLogin" />
+          @keyup.enter.native="handleLogin"
+        />
         <span class="show-pwd" @click="showPwd">
-          <svg-icon icon-class="eye" />
+          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">{{ $t('login.logIn') }}</el-button>
+      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">
+        {{ $t('login.logIn') }}
+      </el-button>
 
       <div style="position:relative">
         <div class="tips">
@@ -45,11 +50,15 @@
           <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
         </div>
         <div class="tips">
-          <span style="margin-right:18px;">{{ $t('login.username') }} : editor</span>
+          <span style="margin-right:18px;">
+            {{ $t('login.username') }} : editor
+          </span>
           <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
         </div>
 
-        <el-button class="thirdparty-button" type="primary" @click="showDialog=true">{{ $t('login.thirdparty') }}</el-button>
+        <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
+          {{ $t('login.thirdparty') }}
+        </el-button>
       </div>
     </el-form>
 
@@ -60,12 +69,11 @@
       <br>
       <social-sign />
     </el-dialog>
-
   </div>
 </template>
 
 <script>
-import { isvalidUsername } from '@/utils/validate'
+import { validUsername } from '@/utils/validate'
 import LangSelect from '@/components/LangSelect'
 import SocialSign from './socialsignin'
 
@@ -74,7 +82,7 @@ export default {
   components: { LangSelect, SocialSign },
   data() {
     const validateUsername = (rule, value, callback) => {
-      if (!isvalidUsername(value)) {
+      if (!validUsername(value)) {
         callback(new Error('Please enter the correct user name'))
       } else {
         callback()
@@ -90,7 +98,7 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: '1111111'
+        password: '111111'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -113,6 +121,13 @@ export default {
   created() {
     // window.addEventListener('hashchange', this.afterQRScan)
   },
+  mounted() {
+    if (this.loginForm.username === '') {
+      this.$refs.username.focus()
+    } else if (this.loginForm.password === '') {
+      this.$refs.password.focus()
+    }
+  },
   destroyed() {
     // window.removeEventListener('hashchange', this.afterQRScan)
   },
@@ -123,6 +138,9 @@ export default {
       } else {
         this.passwordType = 'password'
       }
+      this.$nextTick(() => {
+        this.$refs.password.focus()
+      })
     },
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
@@ -195,7 +213,7 @@ export default {
         height: 47px;
         caret-color: $cursor;
         &:-webkit-autofill {
-          -webkit-box-shadow: 0 0 0px 1000px $bg inset !important;
+          box-shadow: 0 0 0px 1000px $bg inset !important;
           -webkit-text-fill-color: $cursor !important;
         }
       }
@@ -256,8 +274,10 @@ $light_gray:#eee;
     .set-language {
       color: #fff;
       position: absolute;
-      top: 5px;
+      top: 3px;
+      font-size:18px;
       right: 0px;
+      cursor: pointer;
     }
   }
   .show-pwd {

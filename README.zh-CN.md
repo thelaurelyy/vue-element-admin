@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/badge/vue-2.5.10-brightgreen.svg" alt="vue">
   </a>
   <a href="https://github.com/ElemeFE/element">
-    <img src="https://img.shields.io/badge/element--ui-2.3.2-brightgreen.svg" alt="element-ui">
+    <img src="https://img.shields.io/badge/element--ui-2.4.11-brightgreen.svg" alt="element-ui">
   </a>
   <a href="https://travis-ci.org/PanJiaChen/vue-element-admin" rel="nofollow">
     <img src="https://travis-ci.org/PanJiaChen/vue-element-admin.svg?branch=master" alt="Build Status">
@@ -30,7 +30,9 @@
 
 ## 简介
 
-[vue-element-admin](http://panjiachen.github.io/vue-element-admin) 是一个后台集成解决方案，它基于 [vue](https://github.com/vuejs/vue) 和 [element](https://github.com/ElemeFE/element)。它使用了最新的前端技术栈，内置了 i18 国际化解决方案，动态路由，权限验证，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。相信不管你的需求是什么，本项目都能帮助到你。
+[vue-element-admin](http://panjiachen.github.io/vue-element-admin) 是一个后台集成解决方案，它基于 [vue](https://github.com/vuejs/vue) 和 [element](https://github.com/ElemeFE/element)。它使用了最新的前端技术栈，内置了 i18n 国际化解决方案，动态路由，权限验证，提炼了典型的业务模型，提供了丰富的功能组件，它可以帮助你快速搭建企业级中后台产品原型。相信不管你的需求是什么，本项目都能帮助到你。
+
+**[v4.0](https://github.com/PanJiaChen/vue-element-admin/tree/v4.0) 已经进入 beta 测试阶段。 它基于 vue-cli@3 进行构建，优化了大量代码(尤其是权限和 mock)，并且增加了不少新特性。欢迎使用并提出建议。**
 
 - [在线访问](http://panjiachen.github.io/vue-element-admin)
 
@@ -40,7 +42,7 @@
 
 - [Wiki](https://github.com/PanJiaChen/vue-element-admin/wiki)
 
-- [Donate](https://panjiachen.github.io/vue-element-admin-site/zh/donate/)
+- [Donate](https://panjiachen.gitee.io/vue-element-admin-site/zh/donate)
 
 - [Gitee](https://panjiachen.gitee.io/vue-element-admin/) 国内用户可访问该地址在线预览
 
@@ -52,7 +54,7 @@
 - 桌面端: [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 - Typescript版: [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (鸣谢: [@Armour](https://github.com/Armour))
 
-群主 **[圈子](https://jianshiapp.com/circles/1209)** 楼主会经常分享一些技术相关的东西，或者加入[qq 群](https://github.com/PanJiaChen/vue-element-admin/issues/602)
+群主 **[圈子](https://jianshiapp.com/circles/1209)** 楼主会经常分享一些技术相关的东西，或者加入[qq 群](https://github.com/PanJiaChen/vue-element-admin/issues/602)或者关注[微博](https://weibo.com/u/3423485724?is_all=1)
 
 **注意：该项目使用 element-ui@2.3.0+ 版本，所以最低兼容 vue@2.5.0+**
 
@@ -213,6 +215,8 @@ Detailed changes for each release are documented in the [release notes](https://
 
 如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :tropical_drink:
 ![donate](https://panjiachen.github.io/donate/donation.png)
+
+[更多捐赠方式](https://panjiachen.gitee.io/vue-element-admin-site/zh/donate)
 
 [Paypal Me](https://www.paypal.me/panfree23)
 
